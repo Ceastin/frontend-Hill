@@ -1,0 +1,92 @@
+.Caros{
+    background-color:#F0A63F ;
+    height: 50vh;
+    padding:20px;
+    display: flex;
+    overflow-x: auto;      /* 🔥 key */
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.Caros::-webkit-scrollbar {
+    display: none;
+}
+.card{
+    height: 30vh;
+    width: 50vh;
+    background: linear-gradient(to bottom right, rgb(255, 253, 253) 0%,rgb(228, 218, 199) 100%);
+    border-radius: 10%;
+    border-left-color: white;
+    border-top-color: white;
+    border-right-color: rgb(238, 228, 211);
+    border-bottom-color: rgb(228, 218, 199);;
+    border-style: solid;
+    border-right-width: 4px;
+    border-bottom-width: 4px;
+    box-shadow: 3px 4px 0px rgba(0,0,0,0.2);
+    margin-right: 20px;
+    flex: 0 0 auto;
+}
+.Dotted-line{
+    border-style: dotted ;
+    border-radius: 10%;
+    height: 27vh;
+    width: 47vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:6px;
+    border-color: rgb(0, 0, 0);
+    border-width: 5px;
+}
+.Circle{
+    border-radius: 50%;
+    background-color: rgb(0, 0, 0);
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.var{
+    font-size: 50px;
+    font-weight: bolder;
+    color: rgb(224, 217, 217);
+}
+.card2 {
+    height: 30vh;
+    width: 50vh;
+    margin-right: 20px;
+    background-image: url("/cardback.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 4px;
+    border-left-color: white;
+    border-top-color: white;
+    border-right-color: rgb(238, 228, 211);
+    border-bottom-color: rgb(228, 218, 199);
+
+    box-shadow: 3px 4px 0px rgba(0,0,0,0.2);
+    overflow: hidden;
+    flex: 0 0 auto;
+}
+.cardFooter{
+    background-color: gray;
+    margin-top: 140px;
+    padding-bottom: 100px;
+    box-shadow: 10px 39px 11px 44px  rgba(0,0,0,0.6); 
+}
+.primary-text{
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.secondary-text{
+    font-size: 14px;
+    font-weight: normal;
+}

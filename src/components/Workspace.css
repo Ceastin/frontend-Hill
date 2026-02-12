@@ -1,0 +1,46 @@
+.Workspace-desk{
+    background-color: #F0A63F ;
+    height: 100vh;
+    padding:30px;
+    display: flex;
+    justify-content: center;
+}
+.Window{
+    width: 1200px;
+    height: 560px;
+    background-color: var(--bg-purple-header);
+    border-radius: 8px;
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.2); /* Retro shadow */
+    overflow: hidden;
+    position: relative;
+}
+.dustbin{
+    width: 80px;
+    height: 80px;
+    background-image: url("/icons8-bin-windows-144.png");
+    background-size: contain;       
+    cursor: pointer;
+    position: absolute;
+    left: 4px;
+    top: 55px;
+}
+.Workspace-folder{
+    width:80px;
+    height:80px;
+    background-image: url("qlr8b2r93mru3d0eqbedtbo4c9-ec0df48f00f736999d8cc903b46c4897.png");
+    background-size: contain;
+    cursor: pointer;
+    position: absolute;
+    left:115px;
+    top:56px;
+}
+.Team-button{
+    width:80px;
+    height:80px;
+    background-image: url("teamwork.png");
+    background-size: contain;
+    cursor: pointer;
+    position: absolute;
+    left:235px;
+    top:56px;
+}

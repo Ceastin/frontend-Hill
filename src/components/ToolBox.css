@@ -1,0 +1,48 @@
+.toobox{
+    background-color: #F0A63F;
+    height: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cardbox{
+    height: 33vh;
+    width: 180vh;
+    margin-bottom: 20px;
+    margin-left:20px;
+
+    background: linear-gradient( to right, rgb(255, 253, 253) 0%,rgb(228, 218, 199) 100%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 28px;
+    border-style: solid;
+    border-width: 4px;
+    border-left-color: white;
+    border-top-color: white;
+    border-right-color: rgb(238, 228, 211);
+    border-bottom-color: rgb(228, 218, 199);
+
+    box-shadow: 3px 4px 0px rgba(0,0,0,0.2);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.iconbox{
+    background-color: #7068AE ;
+    height: 28vh;
+    width: 40vh;
+    margin-top: 10px;
+    border-radius: 28px;
+    border-color: #F9C3D6;
+}
+.description{
+    background-color: #292335;
+    height: 28vh;
+    width: 135vh;
+    margin-top: 10px;
+    border-radius: 28px;
+}

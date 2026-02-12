@@ -1,0 +1,51 @@
+  @keyframes growShrink {
+    0%   { transform: scaleY(0.05); }
+    50%  { transform: scaleY(1); }
+    100% { transform: scaleY(0.05); }
+  }
+
+  @keyframes tunePulse {
+    0%   { transform: scaleY(0.25); opacity: 0.6; }
+    25%  { transform: scaleY(0.65); opacity: 0.9; }
+    50%  { transform: scaleY(1);    opacity: 1; }
+    75%  { transform: scaleY(0.6);  opacity: 0.9; }
+    100% { transform: scaleY(0.25); opacity: 0.6; }
+  }
+  /* --bg-orange: #F0A63F;
+  --bg-purple-header: #7068AE;
+  --bg-dark-editor: #292335;
+  --icon-pink: #F9C3D6;
+  --text-code-pink: #D64076;
+  --text-code-green: #91B859;
+  --text-code-grey: #A4A3A8;
+  --highlight-yellow: #FDD85D; */
+
+  /* tune styles */
+  .tune {
+    width: 320px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 6px 50px; /* aligns to semicircles' margins */
+  }
+  .tune .baseline {
+    position: absolute;
+    height: 3px;
+    width: 82%;
+    background: rgba(0,0,0,0.12);
+    border-radius: 2px;
+    z-index: 1;
+  }
+  .tune .tune-bar {
+    width: 6px;
+    height: 34px;
+    background: linear-gradient(180deg, rgba(34,139,34,1), rgba(0,100,0,1));
+    border-radius: 3px;
+    transform-origin: bottom;
+    transform: scaleY(0.25);
+    animation: tunePulse 760ms cubic-bezier(.2,.6,.2,1) infinite;
+    z-index: 2;
+    margin: 0 3px;
+  }
