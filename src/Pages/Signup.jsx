@@ -1,6 +1,40 @@
 import React from "react";
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { signupUser } from "../api/userApi";
 function Signup(){
+    const navigate=useNavigate();
+    const [error,setError]=useState(null);
+    const [loading,setLoading]=useState(false);
+    const [userInfo,setUserInfo]=useState({
+        username:"",
+        password:"",
+        firstName:"",
+        lastName:"",
+        phoneNumber:""
+    });
+    const handleChangr=(e)=>{
+        setUserInfo({...userInfo,[e.target.name]:e.target.value});
+    };
+    const handlesubmitter=async (e)=>{
+        e.preventDefault();
+        console.log(userInfo);
+        try{
+            setLoading(true);
+            setError(null);
+            const res=await signupUser(userInfo);
+            console.log("success:",res);
+            navigate("/login",{replace:true});
+        }
+        catch(err){
+            setError(err.response?.data?.message || "Signup failed");
+            console.log(err.response?.data?.message||"signup failed")
+        }
+        finally{
+            setLoading(false);
+            setError(null);
+        }
+    };
     return (
         <div className="login-container">
             <div className="window-frame">
@@ -11,39 +45,39 @@ function Signup(){
                 </div>
                 <div className="window-content">
                     <h2>{`// User SignUp`}</h2>
-                    <form>
+                    <form onSubmit={handlesubmitter}>
                         <div className="code-line">
                             <label>
                                 <span className="tag">&lt;input</span> <span className="attr">id</span>="first name" <span className="tag">/&gt;</span>
                             </label>
-                            <input type="text" placeholder="Enter first name..." />
+                            <input value={userInfo.firstName} name="firstName" onChange={handleChangr} type="text" placeholder="Enter first name..." />
                         </div>
                         <div className="code-line">
                             <label>
                                 <span className="tag">&lt;input</span> <span className="attr">id</span>="last name" <span className="tag">/&gt;</span>
                             </label>
-                            <input type="text" placeholder="Enter last name..." />
+                            <input value={userInfo.lastName} name="lastName"onChange={handleChangr} type="text" placeholder="Enter last name..." />
                         </div>
                         <div className="code-line">
                             <label>
                                 <span className="tag">&lt;input</span> <span className="attr">id</span>="mobile no"<span className="tag">/&gt;</span>
                             </label>
-                            <input type="text" placeholder="Enter mobile no..."></input>
+                            <input value={userInfo.phoneNumber} name="phoneNumber" onChange={handleChangr} type="text" placeholder="Enter mobile no..."></input>
                         </div>
                         <div className="code-line">
                             <label>
                                 <span className="tag">&lt;input</span> <span className="attr">type</span>="password" <span className="tag">/&gt;</span>
                             </label>
-                            <input type="password" placeholder="Enter password..." />
+                            <input value={userInfo.password} name="password" type="password" onChange={handleChangr} placeholder="Enter password..." />
                         </div>
                         <div className="code-line">
                             <label>
-                                <span className="tag">&lt;input</span> <span className="attr">type</span>="confirm password" <span className="tag">/&gt;</span>
+                                <span className="tag">&lt;input</span> <span className="attr">type</span>="username" <span className="tag">/&gt;</span>
                             </label>
-                            <input type="password" placeholder="confirm password..." />
+                            <input value={userInfo.username} name="username" type="text" onChange={handleChangr} placeholder="username..." />
                         </div>
                         <button type="submit">
-                           Run_Session()
+                           {loading?"Running":"Run_Session()"}
                         </button>
                     </form>
                 </div>
